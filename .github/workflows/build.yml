@@ -127,9 +127,11 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
+          release_name: Release ${{env.RELEASE_NAME}}
           file_glob: true
+          overwrite: true
           file: ./publish/*
-          tag: ${{ env.RELEASE_NAME }}
+          tag: latest
 
       - name: Delete Workflow Runs
         uses: Mattraks/delete-workflow-runs@v2
