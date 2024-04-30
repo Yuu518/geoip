@@ -44,7 +44,6 @@ jobs:
           curl -sSL https://api.fastly.com/public-ip-list | jq --raw-output '.addresses[],.ipv6_addresses[]' >> data/fastly
           curl -sSL https://ip-ranges.amazonaws.com/ip-ranges.json | jq --raw-output '.prefixes[],.ipv6_prefixes[] | select(.service == "CLOUDFRONT") | .ip_prefix,.ipv6_prefix' | grep "/" >> data/cloudfront
           curl -sSL https://ip-ranges.amazonaws.com/ip-ranges.json | jq --raw-output '.prefixes[],.ipv6_prefixes[] | select(.service == "CLOUDFRONT") | .ip_prefix,.ipv6_prefix' | grep "/" >> data/cloudfront
-          curl -sSL https://github.com/luestr/ProxyResource/raw/main/Tool/Loon/Rule/TelegramALL.list | perl -ne 'print "$1\n" if /^(?:\s*# )?(IP-CIDR(?:6)?, \S+)/' | sed 's/IP-CIDR, //g' | sed 's/IP-CIDR6, //g'| sed 's/,//g' | sed 's/149\.154\.160\.0\/21/149\.154\.160\.0\/20/g' >> data/telegram
           curl -sSL https://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest >> ip.txt
           cat ip.txt | awk -F '|' '/CN/&&/ipv4/ {print $4 "/" 32-log($5)/log(2)}' > data/cn
           cat ip.txt | awk -F '|' '/CN/&&/ipv6/ {print $4 "/" $5}' >> data/cn
