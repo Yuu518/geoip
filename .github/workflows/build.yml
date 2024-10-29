@@ -2,11 +2,12 @@ name: Build geoip files
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 * * 4"
+    - cron: "30 22 */2 * *"
   push:
     branches:
       - master
     paths-ignore:
+      - ".github"
       - ".gitignore"
       - "LICENSE*"
       - "*.md"
