@@ -59,6 +59,11 @@ jobs:
           cp GeoLite2-Country-CSV_*/*.csv ./geolite2/
           cp GeoLite2-ASN-CSV_*/*.csv ./geolite2/
 
+      - name: Append more CIDRs
+        run: |
+          mkdir -p data
+          curl -sSL https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili_Resolve.list | grep IP-CIDR, | sed 's/IP-CIDR,//g' > data/bilibili
+
       - name: Build geoip files
         run: |
           go build ./
