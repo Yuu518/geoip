@@ -29,7 +29,7 @@
       "action": "add",
       "args": {
         "name": "bilibili",
-        "uri": "./data/bilibili"
+        "uri": "https://raw.githubusercontent.com/Yuu518/Yuu-config/master/ip-list-custom/bilibili"
       }
     },
     {
