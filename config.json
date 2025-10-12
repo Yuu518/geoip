@@ -28,14 +28,6 @@
       "type": "text",
       "action": "add",
       "args": {
-        "name": "bilibili",
-        "uri": "https://raw.githubusercontent.com/Yuu518/Yuu-config/master/ip-list-custom/bilibili"
-      }
-    },
-    {
-      "type": "text",
-      "action": "add",
-      "args": {
         "name": "tor",
         "uri": "https://check.torproject.org/torbulkexitlist"
       }
