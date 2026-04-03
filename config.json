@@ -21,7 +21,7 @@
       "action": "add",
       "args": {
         "name": "cn",
-        "uri": "https://raw.githubusercontent.com/DH-Teams/DH-Geo_AS_IP_CN/main/Geo_AS_IP_CN_All.txt"
+        "uri": "https://raw.githubusercontent.com/pmkol/easymosdns/rules/china_ip_list.txt"
       }
     },
     {
